@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <!-- config básica da página + ajuste pra mobile -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro de Participantes</title>
+
+    <!-- css e js separados -->
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <!-- cabeçalho com data/hora que o js atualiza -->
+    <header class="site-header">
+      <div class="container">
+        <h1>Evento - Cadastro de Participantes</h1>
+        <p id="currentDateTime" class="date-time" aria-live="polite">
+          Data e hora serão exibidas com JavaScript.
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- aqui entra o formulário criado pelo javascript -->
+      <section aria-labelledby="form-title" class="panel">
+        <h2 id="form-title">Formulário de Cadastro</h2>
+        <div id="formRoot"></div>
+
+        <!-- fallback: se o js estiver desligado, esse form ainda aparece -->
+        <noscript>
+          <p class="info-text">
+            JavaScript está desativado. Você ainda pode enviar o formulário abaixo.
+          </p>
+          <form action="#" method="post" class="participant-form" novalidate>
+            <div class="field">
+              <label for="name-fallback">Nome</label>
+              <input id="name-fallback" name="name" type="text" required />
+            </div>
+
+            <div class="field">
+              <label for="email-fallback">E-mail</label>
+              <input id="email-fallback" name="email" type="email" required />
+            </div>
+
+            <div class="field checkbox-field">
+              <input id="presence-fallback" name="presence" type="checkbox" />
+              <label for="presence-fallback">Presença confirmada</label>
+            </div>
+
+            <div class="field">
+              <label for="ticketType-fallback">Tipo de ingresso</label>
+              <select id="ticketType-fallback" name="ticketType" required>
+                <option value="Padrão">Padrão</option>
+                <option value="VIP">VIP</option>
+                <option value="Convidado">Convidado</option>
+              </select>
+            </div>
+
+            <div class="field checkbox-field">
+              <input id="news-fallback" name="news" type="checkbox" />
+              <label for="news-fallback">Deseja receber novidades do evento?</label>
+            </div>
+
+            <button type="submit">Cadastrar Participante</button>
+          </form>
+        </noscript>
+      </section>
+
+      <!-- lista onde os participantes vão aparecendo -->
+      <section aria-labelledby="list-title" class="panel">
+        <h2 id="list-title">Participantes</h2>
+        <ul id="participantsList" class="participants-list" aria-live="polite"></ul>
+      </section>
+    </main>
+  </body>
+</html>
