@@ -111,12 +111,3 @@ Também exibe:
 
 - Os participantes ficam em memória (não há banco de dados).
 - O envio do formulário sem JS é apenas demonstrativo (sem backend).
-
----
-
-## Autor
-
-- Nome: **[Seu Nome Aqui]**
-- Disciplina: **Programação Web II**
-- Professor(a): **Jéssica de Paulo Rodrigues**
-- Data: **26/02/2026**
